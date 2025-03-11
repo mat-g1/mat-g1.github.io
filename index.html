@@ -74,19 +74,21 @@
         }
     </script>
 
-    <select id="rotateTextBox">
-        <option value="1">Landscape</option>
-        <option value="2">Portrait</option>
-    </select></select>
-    <button onclick="rotateScreen()">Rotate Screen</button>
+    <div style="margin-top: 20px;"></div>
+        <select id="rotateTextBox">
+            <option value="1">Landscape</option>
+            <option value="2">Portrait</option>
+        </select>
+        <button onclick="rotateScreen()">Rotate Screen</button>
+    </div>
 
     <script>
         function rotateScreen() {
             var angle = document.getElementById('rotateTextBox').value;
             window.location.href = "uniwebview://screen_orientation?value=" + angle;
-
         }
     </script>
+    
 
 </body>
 
