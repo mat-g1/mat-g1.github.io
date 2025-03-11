@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple Text Box and Button</h1>
+    <input type="text" id="textBox" placeholder="Enter some text" />
+    <button onclick="displayText()">Submit</button>
+
+    <script>
+        function displayText() {
+            var text = document.getElementById('textBox').value;
+            alert("You entered: " + text);
+        }
+    </script>
+    <button onclick="copyText()">Copy Text</button>
+
+    <script>
+        function copyText() {
+            var text = document.getElementById('textBox').value;
+            navigator.clipboard.writeText(text).then(function () {
+                alert('Text copied to clipboard');
+            }, function (err) {
+                alert('Failed to copy text: ', err);
+            });
+        }
+    </script>
+    <script>
+        function sendTextToUnity() {
+
+            var text = document.getElementById('textBox').value;
+            window.location.href = "uniwebview://send_message?message=" + text;
+        }
+
+    </script>
+
+    <button onclick="sendTextToUnity()">Send to Unity</button>
+
+
+    <script>
+        function OpenUrlFromUnity() {
+            var value = new URL("https://play.sun.win/").hostname;
+            window.location.href = "uniwebview://UnityWebInApp?message=" + (value);
+        }
+
+    </script>
+
+    <button onclick="OpenUrlFromUnity()">OpenUrlFromUnity</button>
+
+
+
+    <script>
+        function displayTextWithParam(text) {
+            alert("You entered: " + text);
+        }
+    </script>
+
+    <select id="rotateTextBox">
+        <option value="1">Landscape</option>
+        <option value="2">Portrait</option>
+    </select></select>
+    <button onclick="rotateScreen()">Rotate Screen</button>
+
+    <script>
+        function rotateScreen() {
+            var angle = document.getElementById('rotateTextBox').value;
+            window.location.href = "uniwebview://screen_orientation?value=" + angle;
+
+        }
+    </script>
+
+</body>
+
+</html>
