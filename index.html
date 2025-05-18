@@ -42,6 +42,8 @@
             }, function (err) {
                 alert('Failed to copy text: ', err);
             });
+            window.Unity.call("Data from web page");
+
         }
     </script>
     <script>
@@ -53,7 +55,7 @@
                 message: "text",
                 type: "send_message"
             };
-             window.Unity.call(JSON.stringify(json));
+            window.Unity.call(JSON.stringify(json));
         }
 
     </script>
@@ -70,7 +72,7 @@
                 message: value.toString(),
                 type: "UnityWebInApp"
             };
-             window.Unity.call(JSON.stringify(json));
+            window.Unity.call(JSON.stringify(json));
 
         }
 
@@ -102,7 +104,7 @@
                 message: angle.toString(),
                 type: "screen_orientation"
             };
-             window.Unity.call(JSON.stringify(json));
+            window.Unity.call(JSON.stringify(json));
         }
     </script>
 
