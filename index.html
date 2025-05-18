@@ -70,6 +70,8 @@
                 "message": value,
                 "type": "UnityWebInApp"
             };
+            window.webkit.messageHandlers.unityBridge.postMessage(json);
+
         }
 
     </script>
