@@ -49,7 +49,11 @@
 
             var text = document.getElementById('textBox').value;
             // window.href = "uniwebview://send_message?message=" + text;
-            window.webkit.messageHandlers.unityBridge.postMessage(text);
+            var json = {
+                "message": text,
+                "type": "send_message"
+            };
+            window.webkit.messageHandlers.unityBridge.postMessage(json);
         }
 
     </script>
@@ -60,7 +64,12 @@
     <script>
         function OpenUrlFromUnity() {
             var value = new URL("https://play.sun.win/").hostname;
-            window.location.href = "uniwebview://UnityWebInApp?message=" + (value);
+            // window.location.href = "uniwebview://UnityWebInApp?message=" + (value);
+
+            var json = {
+                "message": value,
+                "type": "UnityWebInApp"
+            };
         }
 
     </script>
@@ -85,10 +94,16 @@
     <script>
         function rotateScreen() {
             var angle = document.getElementById('rotateTextBox').value;
-            window.location.href = "uniwebview://screen_orientation?value=" + angle;
+            // window.location.href = "uniwebview://screen_orientation?value=" + angle;
+
+            var json = {
+                "message": angle,
+                "type": "screen_orientation"
+            };
+            window.webkit.messageHandlers.unityBridge.postMessage(json);
         }
     </script>
-    
+
 
 </body>
 
