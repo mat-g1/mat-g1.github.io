@@ -48,7 +48,8 @@
         function sendTextToUnity() {
 
             var text = document.getElementById('textBox').value;
-            window.location.href = "uniwebview://send_message?message=" + text;
+            // window.href = "uniwebview://send_message?message=" + text;
+            window.webkit.messageHandlers.unityBridge.postMessage(text);
         }
 
     </script>
