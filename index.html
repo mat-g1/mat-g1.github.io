@@ -53,7 +53,7 @@
                 message: "text",
                 type: "send_message"
             };
-            window.webkit.messageHandlers.unityBridge.postMessage(JSON.stringify(json));
+             window.Unity.call(JSON.stringify(json));
         }
 
     </script>
@@ -70,7 +70,7 @@
                 message: value.toString(),
                 type: "UnityWebInApp"
             };
-            window.webkit.messageHandlers.unityBridge.postMessage(JSON.stringify(json));
+             window.Unity.call(JSON.stringify(json));
 
         }
 
@@ -102,7 +102,7 @@
                 message: angle.toString(),
                 type: "screen_orientation"
             };
-            window.webkit.messageHandlers.unityBridge.postMessage(JSON.stringify(json));
+             window.Unity.call(JSON.stringify(json));
         }
     </script>
 
