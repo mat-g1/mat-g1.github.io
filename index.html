@@ -50,8 +50,8 @@
             var text = document.getElementById('textBox').value;
             // window.href = "uniwebview://send_message?message=" + text;
             var json = {
-                "message": text,
-                "type": "send_message"
+                message: "text",
+                type: "send_message"
             };
             window.webkit.messageHandlers.unityBridge.postMessage(json);
         }
@@ -67,8 +67,8 @@
             // window.location.href = "uniwebview://UnityWebInApp?message=" + (value);
 
             var json = {
-                "message": value,
-                "type": "UnityWebInApp"
+                message: value.toString(),
+                type: "UnityWebInApp"
             };
             window.webkit.messageHandlers.unityBridge.postMessage(json);
 
@@ -99,8 +99,8 @@
             // window.location.href = "uniwebview://screen_orientation?value=" + angle;
 
             var json = {
-                "message": angle,
-                "type": "screen_orientation"
+                message: angle.toString(),
+                type: "screen_orientation"
             };
             window.webkit.messageHandlers.unityBridge.postMessage(json);
         }
